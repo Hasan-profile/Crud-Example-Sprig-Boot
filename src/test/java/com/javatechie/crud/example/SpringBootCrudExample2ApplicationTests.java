@@ -83,6 +83,16 @@ class SpringBootCrudExample2ApplicationTests {
 //			assertEquals(1.49, price);
 //			assertEquals(20, quantity);
 //		}
+@Test
+public void testAddProduct() {
+    ProductService product = new ProductService();
+    product.setName("Test");
+    product.setPrice(123);
+    product.setQuantity(10);
+    when(ProductService.saveProduct(product)).thenReturn(product);
+    ProductService savedProduct = ProductController.addProduct(product);
+    assertEquals(product, savedProduct);
+}
 }
 
 
