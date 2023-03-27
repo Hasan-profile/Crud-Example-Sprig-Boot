@@ -54,18 +54,18 @@ class SpringBootCrudExample2ApplicationTests {
 //			assertEquals(15, quantity);
 //		}
 //
-//		@Test
-//		void testDeleteProducts() {
-//			// Given
-//			ProductService product = new ProductService("Apple", 0.99, 10);
-//
-//			// When
-//			product.deleteProduct(5);
-//			int quantity = product.getQuantity();
-//
-//			// Then
-//			assertEquals(5, quantity);
-//		}
+		// @Test
+		// void testDeleteProducts() {
+		// 	// Given
+		// 	ProductService product = new ProductService("Apple", 0.99, 10);
+
+		// 	// When
+		// 	product.deleteProduct(5);
+		// 	int quantity = product.getQuantity();
+
+		// 	// Then
+		// 	assertEquals(5, quantity);
+		// }
 //
 //		@Test
 //		void testUpdateProduct() {
@@ -107,6 +107,19 @@ public void testAddProduct() {
 		assertEquals("Apple", name);
 		assertEquals(99, price);
 		assertEquals(10, quantity);
+	}
+
+	@Test
+	void testDeleteProducts() {
+		// Given
+		ProductService product = new ProductService("Apple", 0.99, 10);
+
+		// When
+		product.deleteProduct(5);
+		int quantity = product.getQuantity();
+
+		// Then
+		assertEquals(5, quantity);
 	}
 }
 
